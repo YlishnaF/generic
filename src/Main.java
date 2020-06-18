@@ -4,7 +4,26 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-      
+        Apple apple = new Apple();
+        Orange orange = new Orange();
+
+        Box<Apple> box = new Box<>(apple);
+        Box<Orange> box1=new Box<>(orange);
+        Box<Apple> box2 = new Box<>(apple);
+
+        box.putFruit(apple);
+        box.putFruit(apple);
+        box1.putFruit(orange);
+        box1.putFruit(orange);
+        box2.putFruit(apple);
+        box.putFruit(apple);
+
+
+        System.out.println(box2.getWeight());
+        System.out.println(box1.compare(box));
+        box.putToAnotherBox(box2);
+        box1.info();
+
 
 // Второе звадание
         Integer [] arr = {2,5,7,9};
